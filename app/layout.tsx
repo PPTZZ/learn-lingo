@@ -14,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased text-black`}>
+      <body
+        className={`antialiased text-black max-w-screen-limiter flex flex-col mx-auto`}
+      >
         <Header />
         {children}
       </body>
