@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { links } from "@/lib/links";
 import Link from "next/link";
