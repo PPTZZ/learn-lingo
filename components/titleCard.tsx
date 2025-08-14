@@ -1,5 +1,6 @@
 'use client'
 import React from "react";
+import MainButton from "@/components/UI/button";
 
 const TitleCard = () => {
     return (
@@ -16,9 +17,7 @@ const TitleCard = () => {
                 Elevate your language proficiency to new heights by connecting with
                 highly qualified and experienced tutors.
             </p>
-            <button className="mt-16 bg-gold rounded-xl px-10 py-2 font-semibold ">
-                get started
-            </button>
+            <MainButton color={'primary'} size={'md'} className={'mt-16'}>get started</MainButton>
         </div>
     );
 };
