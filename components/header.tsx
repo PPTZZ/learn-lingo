@@ -3,7 +3,7 @@ import React from "react";
 import {links} from "@/lib/links";
 import Link from "next/link";
 import {LogIn} from "lucide-react";
-import {useSearchParams, useRouter} from "next/navigation";
+import {useRouter} from "next/navigation";
 import MainButton from "@/components/UI/button";
 
 
@@ -38,7 +38,8 @@ const Header = () => {
                     <LogIn className="stroke-gold"/>
                     Login
                 </Link>
-                <MainButton color={'register'} size={'register'} className={''} onClick={openRegister}>Registration</MainButton>
+                <MainButton color={'register'} size={'register'} className={''}
+                            onClick={openRegister}>Registration</MainButton>
             </div>
         </nav>
     );

@@ -17,10 +17,13 @@
 
     --spacing-main-page-cta: 45rem;
     --spacing-screen-limiter: 90rem;
-    --spacing-btn-lg:27.375rem;
-    --spacing-btn-md:17.25rem;
-    --spacing-btn-sm:11.438rem;
-    --spacing-btn-register:10.375rem;
+    --spacing-btn-lg: 27.375rem;
+    --spacing-btn-md: 17.25rem;
+    --spacing-btn-sm: 11.438rem;
+    --spacing-btn-register: 10.375rem;
 
+}
 
+.modal-input{
+    @apply w-full px-5 py-4 outline-2 outline-gray-200 rounded-lg ;
 }

@@ -11,9 +11,9 @@ const buttonStyles = tv({
             register:'bg-black text-white hover:bg-gold hover:text-black',
         },
         size: {
-            lg: 'w-btn-lg',
-            md: 'w-btn-md',
-            sm: 'w-btn-sm',
+            lg: 'w-full py-3',
+            md: 'w-btn-md py-3',
+            sm: 'w-btn-sm py-3',
             register:'w-btn-register',
         }
     }

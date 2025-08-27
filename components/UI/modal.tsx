@@ -1,5 +1,5 @@
 'use client'
-import React, {useRef, useEffect, JSX} from 'react'
+import React, {JSX, useEffect, useRef} from 'react'
 import {useRouter, useSearchParams} from "next/navigation";
 import {X} from 'lucide-react'
 
@@ -16,7 +16,6 @@ const Modal = ({children, ac}: { children: React.ReactNode, ac: string }) => {
             modalRef.current?.close()
         }
     }, [showModal]);
-
     const closeModal = () => {
         modalRef.current?.close()
         router.push('/')
@@ -24,11 +23,11 @@ const Modal = ({children, ac}: { children: React.ReactNode, ac: string }) => {
 
 
     const dialog: JSX.Element | null = showModal === ac ? (
-        <dialog ref={modalRef} className='fixed top-50 left-50 -translate-50 z-10 backdrop:bg-black/50'>
-            <div className="size-96 bg-red-900">
-
+        <dialog ref={modalRef}
+                className='backdrop:bg-black/50 p-16 rounded-2xl fixed top-1/2 left-1/2 -translate-1/2 z-50'>
+            <div className=" bg-white p-16 w-[35.375rem] h-[37.5rem]">
                 <button
-                    className={'absolute top-2 right-2 text-white size-6 bg-black font-bold flex justify-center items-center rounded-full aspect-square cursor-pointer'}
+                    className={'absolute top-2 right-2 text-black bg-white font-bold flex justify-center items-center aspect-square cursor-pointer'}
                     onClick={closeModal}><X/>
                 </button>
                 {children}
