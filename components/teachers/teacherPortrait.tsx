@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UserPortrait = () => {
+const TeacherPortrait = () => {
     return (
         <div
             className={'size-32 border-3 border-gold-muted rounded-full p-3 aspect-square relative flex justify-center items-center'}>
@@ -9,4 +9,4 @@ const UserPortrait = () => {
         </div>
     )
 }
-export default UserPortrait
+export default TeacherPortrait

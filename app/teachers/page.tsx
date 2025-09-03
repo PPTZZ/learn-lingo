@@ -1,5 +1,5 @@
 import React from 'react'
-import TeacherCard from "@/components/teacherCard";
+import TeacherCard from "@/components/teachers/teacherCard";
 
 const Teachers = () => {
     return (
