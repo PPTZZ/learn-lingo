@@ -3,6 +3,8 @@ import React from 'react'
 import TeacherPortrait from "@/components/teachers/teacherPortrait";
 import TeacherStats from "@/components/teachers/teacherStats";
 import TeacherDetails from "@/components/teachers/teacherDetails";
+import TeachingLevel from "@/components/teachers/teachingLevel";
+import TeacherDescription from "@/components/teachers/teacherDescription";
 
 const TeacherCard = () => {
     return (
@@ -13,6 +15,8 @@ const TeacherCard = () => {
             <div className={'col-span-5'}>
                 <TeacherStats/>
                 <TeacherDetails/>
+                <TeacherDescription/>
+                <TeachingLevel/>
             </div>
         </div>
     )

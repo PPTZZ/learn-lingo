@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import TeacherDescription from "@/components/teachers/teacherDescription";
 
 
 const TeacherDetails = () => {
@@ -19,8 +18,6 @@ const TeacherDetails = () => {
                 fuga fugit id illo ipsum minus mollitia omnis provident ratione repellendus sunt! Aperiam consequatur
                 deserunt earum enim recusandae.
             </p>
-            <TeacherDescription/>
-            <div className="h-6 w-20 bg-red-800"></div>
         </div>
     )
 }
