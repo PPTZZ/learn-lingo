@@ -17,31 +17,33 @@ const Header = () => {
 
 
     return (
-        <nav className="flex justify-around items-center p-4 bg-white">
-            <div className="flex gap-2 items-center">
-                <div className="size-7 aspect-square rounded-full bg-gold"/>
-                <p className="text-xl font-semibold">LearnLingo</p>
-            </div>
-            <div className="flex gap-4 items-center justify-center">
-                {links.map((link) => (
-                    <Link
-                        key={link.title}
-                        href={link.url}
-                        className="hover:text-gold font-semibold"
-                    >
-                        {link.title}
+
+            <nav className="flex justify-around items-center p-4 w-full bg-white">
+                <div className="flex gap-2 items-center">
+                    <div className="size-7 aspect-square rounded-full bg-gold"/>
+                    <p className="text-xl font-semibold">LearnLingo</p>
+                </div>
+                <div className="flex gap-4 items-center justify-center">
+                    {links.map((link) => (
+                        <Link
+                            key={link.title}
+                            href={link.url}
+                            className="hover:text-gold font-semibold"
+                        >
+                            {link.title}
+                        </Link>
+                    ))}
+                </div>
+                <div className="flex gap-4 items-center">
+                    <Link href={'/?ac=login'} className="flex gap-1 font-semibold">
+                        <LogIn className="stroke-gold"/>
+                        Login
                     </Link>
-                ))}
-            </div>
-            <div className="flex gap-4 items-center">
-                <Link href={'/?ac=login'} className="flex gap-1 font-semibold">
-                    <LogIn className="stroke-gold"/>
-                    Login
-                </Link>
-                <MainButton color={'register'} size={'register'} className={''}
-                            onClick={openRegister}>Registration</MainButton>
-            </div>
-        </nav>
+                    <MainButton color={'register'} size={'register'} className={''}
+                                onClick={openRegister}>Registration</MainButton>
+                </div>
+            </nav>
+
     );
 };
 

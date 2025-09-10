@@ -1,12 +1,17 @@
 import React from 'react'
 import {BookOpen, Heart, Star} from 'lucide-react'
 
-const TeacherStats = () => {
+const TeacherStats = ({name, lessons, rating, price}: {
+    name: string,
+    lessons: number,
+    rating: number,
+    price: number
+}) => {
     return (
         <div className={'flex items-start justify-end gap-4 h-14 w-full text-sm'}>
             <div className={'flex flex-col justify-center w-1/3'}>
                 <p>Languages</p>
-                <p className={'font-semibold text-3xl'}>Jane Smith</p>
+                <p className={'font-semibold text-3xl'}>{name}</p>
             </div>
             <div className={'flex items-start justify-end gap-4 h-14 w-full'}>
                 <div className={'flex items-end justify-center gap-2'}>
@@ -14,11 +19,14 @@ const TeacherStats = () => {
                     <p>Lessons online</p>
                 </div>
                 <div>
-                    <p>Lessons done: 65434</p>
+                    <p>Lessons done: {lessons}</p>
                 </div>
                 <div className={'flex items-center justify-center gap-2'}>
                     <Star className={'size-4'}/>
-                    <p>Rating:5.1</p>
+                    <p>Rating: {rating}</p>
+                </div>
+                <div>
+                    <p className={'font-semibold'}>Price/ 1 hour: <span className={'text-green-700'}>${price}</span></p>
                 </div>
                 <Heart/>
             </div>

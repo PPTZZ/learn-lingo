@@ -2,21 +2,18 @@
 import React from 'react'
 
 
-const TeacherDetails = () => {
+const TeacherDetails = ({languages, info, conditions}: { languages: string[], info: string, conditions: string[] }) => {
 
     return (
         <div>
             <p>
-                Speaks: soaidhngs alidsgfna
+                <span className={'font-semibold'}>Speaks:</span> {languages.join(', ')}
             </p>
             <p>
-                Lessons Info: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad enim nesciunt non! Ad alias,
-                aliquam amet debitis dolorum ea esse ipsa neque perspiciatis quod, repellendus veritatis vero
-                voluptates! In, recusandae.
+                <span className={'font-semibold'}>Lessons Info:</span> {info}
             </p>
-            <p>Condiitons: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, deleniti, dolore dolores
-                fuga fugit id illo ipsum minus mollitia omnis provident ratione repellendus sunt! Aperiam consequatur
-                deserunt earum enim recusandae.
+            <p>
+                <span className={'font-semibold'}>Conditions:</span> {conditions.join(' ')}
             </p>
         </div>
     )

@@ -2,44 +2,36 @@
 import React, {useState} from 'react'
 import {ChevronDown} from "lucide-react";
 import CommentCard from "@/components/comments/commentCard";
+import {TReviewerSchema} from "@/lib/dictionary";
 
 
-const TeacherDescription = () => {
+const TeacherDescription = ({description, comments}: { description: string, comments: TReviewerSchema[] }) => {
 
-    const [isExpanded, setExpanded] = useState(false)
-
+    const [isExpanded, setExpanded] = useState(false);
     return (
         <div className={'my-4'}>
-            {!isExpanded ? <p className={'underline cursor-pointer font-black flex gap-2 items-start'}
-                              onClick={() => setExpanded(!isExpanded)}>
-                read more
-                <ChevronDown className={`${isExpanded && "rotate-180"} transition-all duration-200`}/>
-            </p> : <p className={'underline cursor-pointer font-black flex gap-2 items-start'}
-                      onClick={() => setExpanded(!isExpanded)}>
-                read less
-                <ChevronDown className={`${isExpanded && "rotate-180"} transition-all duration-200`}/>
-            </p>}
-            <div className={`transition-all duration-2000 ${!isExpanded ? "h-[0px]" : "h-56"} overflow-y-hidden`}>
+            <div
+                className={`transition-all duration-700 overflow-hidden ${
+                    isExpanded ? "max-h-[500px]" : "max-h-0"
+                }`}
+            >
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi, assumenda at deleniti
-                    doloremque enim facilis, impedit itaque iusto minima minus numquam odio perferendis perspiciatis
-                    porro
-                    sit tempore veniam vitae! lorem ipsa dolor sit amet.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi, assumenda at deleniti
-                    doloremque enim facilis, impedit itaque iusto minima minus numquam odio perferendis perspiciatis
-                    porro
-                    sit tempore veniam vitae! lorem ipsa dolor sit amet.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi, assumenda at deleniti
-                    doloremque enim facilis, impedit itaque iusto minima minus numquam odio perferendis perspiciatis
-                    porro
-                    sit tempore veniam vitae! lorem ipsa dolor sit amet.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi, assumenda at deleniti
-                    doloremque enim facilis, impedit itaque iusto minima minus numquam odio perferendis perspiciatis
-                    porro
-                    sit tempore veniam vitae! lorem ipsa dolor sit amet.
+                    {description}
                 </p>
-                <CommentCard/>
+                {comments.map((comment, i) => <CommentCard key={i} reviewer={comment.reviewer_name}
+                                                           rating={comment.reviewer_rating}
+                                                           comment={comment.comment}/>)}
+
             </div>
+            <button
+                onClick={() => setExpanded(!isExpanded)}
+                className="underline font-black flex gap-2 items-center cursor-pointer"
+            >
+                {isExpanded ? "read less" : "read more"}
+                <ChevronDown
+                    className={`${isExpanded ? "rotate-180" : ""} transition-transform duration-200`}
+                />
+            </button>
         </div>
     )
 }
